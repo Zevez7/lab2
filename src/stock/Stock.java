@@ -1,8 +1,8 @@
 package stock;
 
 /**
- * Class that calculate stock prices gain or loss Will have attributes for symbol, name, costBasis,
- * currentPrice
+ * Class that calculate stock prices gain or loss.
+ * Class will have attributes for symbol, name, costBasis, currentPrice.
  */
 public class Stock {
 
@@ -25,9 +25,9 @@ public class Stock {
   }
 
   /**
-   * Return the stock symbol
+   * Return the stock symbol.
    *
-   * @return the stock symbol
+   * @return the stock symbol.
    */
 
 
@@ -36,9 +36,9 @@ public class Stock {
   }
 
   /**
-   * Return the stock name
+   * Return the stock name.
    *
-   * @return the stock name
+   * @return the stock name.
    */
 
   public String getName() {
@@ -46,9 +46,9 @@ public class Stock {
   }
 
   /**
-   * Return the stock cost basis
+   * Return the stock cost basis.
    *
-   * @return the stock cost basis
+   * @return the stock cost basis.
    */
 
   public double getCostBasis() {
@@ -56,9 +56,9 @@ public class Stock {
   }
 
   /**
-   * Return the stock current price
+   * Return the stock current price.
    *
-   * @return the stock current price
+   * @return the stock current price.
    */
 
   public double getCurrentPrice() {
@@ -66,9 +66,9 @@ public class Stock {
   }
 
   /**
-   * Set the stock cost basis
+   * Set the stock cost basis.
    *
-   * @param costBasis the stock cost
+   * @param costBasis the stock cost.
    */
 
   public void setCostBasis(double costBasis) {
@@ -76,32 +76,34 @@ public class Stock {
   }
 
   /**
-   * Set the current stock price
+   * Set the current stock price.
    *
-   * @param currentPrice the current stock price
+   * @param currentPrice the current stock price.
    */
   public void setCurrentPrice(double currentPrice) {
     this.currentPrice = currentPrice;
   }
 
   /**
-   * Calculate and return the fractional change in the stock price
+   * Calculate and return the fractional change in the stock price.
    *
-   * @return the change in fractional price of the stock
+   * @return the change in fractional price of the stock.
    */
 
   public double getChangePercent() {
-    return ((this.costBasis - this.currentPrice) / this.costBasis);
+    double percentage = (this.currentPrice - this.costBasis) / this.costBasis;
+    return (double)Math.round(percentage *1000)/1000;
   }
 
   /**
-   * Print out a string format of the instance of stock class
+   * Print out a string format of the instance of stock class.
    *
-   * @return a string with the current price and gains or loss
+   * @return a string with the current price and gains or loss.
    */
   public String toString() {
-    return String.format(" %s Current Price: $ %.2f\n Gain/Loss: %.2f",
-        this.name, this.currentPrice, this.getChangePercent());
+    double convertPercentage = this.getChangePercent()*100;
+    return String.format(" %s Current Price: $ %.2f\n Gain/Loss: %.2f%%",
+        this.name, this.currentPrice, convertPercentage);
   }
 
 }
