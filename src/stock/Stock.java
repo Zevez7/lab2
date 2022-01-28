@@ -1,8 +1,8 @@
 package stock;
 
 /**
- * Class that calculate stock prices gain or loss.
- * Class will have attributes for symbol, name, costBasis, currentPrice.
+ * Class that calculate stock prices gain or loss. Class will have attributes for symbol, name,
+ * costBasis, currentPrice.
  */
 public class Stock {
 
@@ -92,7 +92,8 @@ public class Stock {
 
   public double getChangePercent() {
     double percentage = (this.currentPrice - this.costBasis) / this.costBasis;
-    return (double)Math.round(percentage *1000)/1000;
+    double value = Math.floor(percentage * 1000) / 1000;
+    return value;
   }
 
   /**
@@ -101,8 +102,8 @@ public class Stock {
    * @return a string with the current price and gains or loss.
    */
   public String toString() {
-    double convertPercentage = this.getChangePercent()*100;
-    return String.format(" %s Current Price: $ %.2f\n Gain/Loss: %.2f%%",
+    double convertPercentage = this.getChangePercent() * 100;
+    return String.format("%s Current Price: $ %.2f\n Gain/Loss: %.2f%%",
         this.name, this.currentPrice, convertPercentage);
   }
 

@@ -110,7 +110,7 @@ public class StockTest {
     double expected = 0.111;
     assertEquals(expected, tesla.getChangePercent(), 0.001);
 
-    double expected2 =-0.624;
+    double expected2 = -0.624;
     assertEquals(expected2, micro.getChangePercent(), 0.001);
   }
 
@@ -119,10 +119,10 @@ public class StockTest {
    */
   @Test
   public void testToString() {
-    String expected = " Tesla Current Price: $ 1000.00\n Gain/Loss: 11.10%";
+    String expected = "Tesla Current Price: $ 1000.00\n Gain/Loss: 11.10%";
     assertEquals(expected, tesla.toString());
 
-    String expected2 = " Microsoft Current Price: $ 2344.23\n Gain/Loss: -62.40%";
+    String expected2 = "Microsoft Current Price: $ 2344.23\n Gain/Loss: -62.40%";
     assertEquals(expected2, micro.toString());
   }
 }
