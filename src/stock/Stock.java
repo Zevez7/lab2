@@ -92,7 +92,12 @@ public class Stock {
 
   public double getChangePercent() {
     double percentage = (this.currentPrice - this.costBasis) / this.costBasis;
-    double value = Math.floor(percentage * 1000) / 1000;
+    double value;
+    if (percentage > 0) {
+      value = Math.floor(percentage * 1000) / 1000;
+    } else {
+      value = Math.ceil(percentage * 1000) / 1000;
+    }
     return value;
   }
 
