@@ -1,8 +1,9 @@
 /**
- * CS5005 LAB
- * Spring 2022
- * Dat Nguyen
+ * CS5005 LAB.
+ * Spring 2022.
+ * Dat Nguyen.
  */
+
 package stock;
 
 /**
