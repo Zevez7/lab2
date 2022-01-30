@@ -12,6 +12,7 @@ public class StockTest {
 
   private Stock tesla;
   private Stock micro;
+  private Stock apple;
 
   /**
    * Setup with a new stock instance initialization.
@@ -22,6 +23,9 @@ public class StockTest {
     tesla.setCurrentPrice(1000.0);
     micro = new Stock("MSFT", "Microsoft", 6234.56343);
     micro.setCurrentPrice(2344.234);
+
+    apple = new Stock("APPL", "Apple", 2344.234);
+    apple.setCurrentPrice(2344.234);
 
   }
 
@@ -35,6 +39,10 @@ public class StockTest {
 
     String expected2 = "MSFT";
     assertEquals(expected2, micro.getSymbol());
+
+    String expected3 = "APPL";
+    assertEquals(expected3, apple.getSymbol());
+
   }
 
   /**
@@ -47,6 +55,9 @@ public class StockTest {
 
     String expected2 = "Microsoft";
     assertEquals(expected2, micro.getName());
+
+    String expected3 = "Apple";
+    assertEquals(expected3, apple.getName());
   }
 
   /**
@@ -59,6 +70,9 @@ public class StockTest {
 
     double expected2 = 6234.56343;
     assertEquals(expected2, micro.getCostBasis(), 0.001);
+
+    double expected3 = 2344.234;
+    assertEquals(expected3, apple.getCostBasis(), 0.001);
   }
 
   /**
@@ -71,6 +85,9 @@ public class StockTest {
 
     double expected2 = 2344.234;
     assertEquals(expected2, micro.getCurrentPrice(), 0.001);
+
+    double expected3 = 2344.234;
+    assertEquals(expected3, apple.getCurrentPrice(), 0.001);
   }
 
   /**
@@ -85,6 +102,10 @@ public class StockTest {
     micro.setCostBasis(3495.23);
     double expected2 = 3495.23;
     assertEquals(expected2, micro.getCostBasis(), 0.001);
+
+    apple.setCostBasis(878.23);
+    double expected3 = 878.23;
+    assertEquals(expected3, apple.getCostBasis(), 0.001);
   }
 
   /**
@@ -100,6 +121,10 @@ public class StockTest {
     micro.setCurrentPrice(3450.67);
     double expected2 = 3450.67;
     assertEquals(expected2, micro.getCurrentPrice(), 0.001);
+
+    apple.setCurrentPrice(65.2345);
+    double expected3 = 65.2345;
+    assertEquals(expected3, apple.getCurrentPrice(), 0.001);
   }
 
   /**
@@ -112,6 +137,9 @@ public class StockTest {
 
     double expected2 = -0.623;
     assertEquals(expected2, micro.getChangePercent(), 0.001);
+
+    double expected3 = 0.0;
+    assertEquals(expected3, apple.getChangePercent(), 0.001);
   }
 
   /**
@@ -124,5 +152,8 @@ public class StockTest {
 
     String expected2 = "Microsoft Current Price: $ 2344.23\n Gain/Loss: -62.30%";
     assertEquals(expected2, micro.toString());
+
+    String expected3 = "Apple Current Price: $ 2344.23\n Gain/Loss: 0.00%";
+    assertEquals(expected3, apple.toString());
   }
 }
