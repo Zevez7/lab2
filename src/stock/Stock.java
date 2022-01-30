@@ -1,5 +1,5 @@
 /*
- * CS5005 LAB2.
+ * CS5005 LAB1.
  * Spring 2022.
  * Dat Nguyen.
  */
